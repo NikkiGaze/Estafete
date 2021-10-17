@@ -11,14 +11,14 @@ public class EstafeteLogic : MonoBehaviour
     private Transform _currentRunner;
     private int _nextPointNumber;
     private float _passDistance = 2.0f;
-    void Start()
+    private void Start()
     {
         _nextPointNumber = 1;
         _currentRunner = _runners[0];
         _currentRunner.LookAt(_runners[_nextPointNumber]);
     }
 
-    void Update()
+    private void Update()
     {
         Transform nextRunnerPosition = _runners[_nextPointNumber];
         _currentRunner.position = Vector3.MoveTowards(_currentRunner.position, nextRunnerPosition.position, 0.1f);
